@@ -1,5 +1,3 @@
-//GLOBAL VARIABLES
-//---------------------------------------
 // Used to record how many times a letter can be pressed
 var doubleWord = ['a','b','c',
 				  'd','e','f',
@@ -9,37 +7,43 @@ var doubleWord = ['a','b','c',
 				  'p','q','r',
 				  's','t','u',
 				  'v','w','x',
-				  'y','z'];
-//Holds the all the words
+                  'y','z'];
+                  
+
+
+//Princess Names
 var wordBank =['belle','tiana','pocahontas','jasmine','aurora','cinderella','merida','ariel','mulan','rapunzel'];
-//Holds choosenWord
+
 var choosenWord = "";
-//Holds letters in word
+
 var lettersInWord = [];
-//Holds number of blanks in word
+
 var numBlanks = 0;
-//Holds Blanks and successful guesses
+
 var blanksAndSuccesses =[];
-//Holds Wrong guesses
+
 var wrongLetters = [];
+
 //Counters
 var winCount = 0;
 var loseCount = 0;
 var guessesLeft = 9;
 var rightGuessCounter = 0;
+
+
+
 //FUNCTIONS
-//----------------------------------------
+
 function reset()
 {
-	//Chooses word randombly from the wordBank
+	//Chooses random name
 	choosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-	//Splits the choosen word into individual letters
+	//Splits letters
 	lettersInWord = choosenWord.split('');
-	//Get the number of blanks
+	//Blank tiles
 	numBlanks = lettersInWord.length;
 	
 	//RESET
-	//===========================================================
 	letterGuessed = 0;
 	rightGuessCounter = 0;
 	guessesLeft = 9;
@@ -57,17 +61,19 @@ function reset()
 	test=false;
 	startGame();
 }
+
+
+
 function startGame()
 {
-	//Chooses word randombly from the wordBank
+	//Chooses random name
 	choosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-	//Splits the choosen word into individual letters
+	//Splits letters
 	lettersInWord = choosenWord.split('');
-	//Get the number of blanks
+	//Blank tiles
 	numBlanks = lettersInWord.length;
 	
 	//RESET
-	//===========================================================
 	rightGuessCounter = 0;
 	guessesLeft = 9;
 	wrongLetters =[];
@@ -95,12 +101,10 @@ function startGame()
 	document.getElementById('winCounter').innerHTML = winCount;
 	document.getElementById('lossCounter').innerHTML = loseCount;
 	document.getElementById('wrongGuesses').innerHTML = wrongLetters;
-	// Testing / Debugging
-	console.log(choosenWord);
-	console.log(lettersInWord);
-	console.log(numBlanks);
-	console.log(blanksAndSuccesses);
 }
+
+
+
 
 function compareLetters(userKey)
 {
@@ -119,8 +123,6 @@ function compareLetters(userKey)
 							document.getElementById('wordToGuess').innerHTML = blanksAndSuccesses.join(' ');
 						}	
 					}
-					//Test / Debug
-					console.log(blanksAndSuccesses);
 				}
 				//Wrong Keys
 				else
@@ -130,14 +132,14 @@ function compareLetters(userKey)
 					//Changes HTML
 					document.getElementById('numGuesses').innerHTML = guessesLeft;
 					document.getElementById('wrongGuesses').innerHTML = wrongLetters;
-					//Test / Debug
-					console.log('Wrong Letters = ' + wrongLetters);
-					console.log('Guesses left are ' + guessesLeft);
 				}
 			
 			
 		
 }
+
+
+
 function winLose()
 {
 	// When number blanks if filled with right words then you win
@@ -162,9 +164,11 @@ function winLose()
 	}
 }
 
+
+
+
 //MAIN PROCCESS
-//-------------------------------------------	
-//Initiates the Code
+
 startGame();
 
 document.onkeyup = function(event)
@@ -176,10 +180,6 @@ document.onkeyup = function(event)
 		if(letterGuessed === doubleWord[i] && test === true)
 		{
 			var spliceDword = doubleWord.splice(i,1);
-			//Test / Debug
-			console.log('Double word is = ' + doubleWord[i])
-			console.log('Spliced Word is = ' + spliceDword);
-
 			compareLetters(letterGuessed);
 			winLose();
 		}
