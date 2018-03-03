@@ -18,12 +18,18 @@
     <! -- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
+    <!-- Animate CSS-->
+    <!-- I tried adding some animation, but it did not work -->
+    <!-- I believe the error being that the Udemy course is -->
+    <!-- using Bootstrap 4 instead of what I linked above. -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+
 </head>
 
 <body>
 
 
-    
+
 
     <div class="container">
 		<div class="jumbotron">
@@ -32,14 +38,14 @@
             <br>
             <p>Hangman Game</p>
             <br>
-            <P>Select a Letter to Start!</P>
+            <P>Guess a Letter to Begin!</P>
     </div>
     
 
 
 
 	<div class="boxes">
-		<div class="panel-heading">
+		<div class="panel-heading wow fadeOutUp">
 			<h2 class="panel-title">Names to Guess</h2>
 		</div>
 		<div class="panel-body">
@@ -83,6 +89,13 @@
 		</div>
 	</div>
 
+    <!-- Animate JavaScript -->
+    <!-- Not working with Bootstrap 3.3.7 -->
+    <!-- The Udemy course uses Boostrap 4 -->
+    <script src="javascript/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
 
     <!-- JavaScript -->
     <script src="assets/javascript/game.js"></script>
@@ -92,6 +105,7 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 
 </body>
 
