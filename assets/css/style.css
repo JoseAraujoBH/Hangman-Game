@@ -1,7 +1,7 @@
 body {
     background:url('../images/castle.jpg');
     opacity: 50%;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     margin-top: 20px;
 }
 
@@ -11,23 +11,28 @@ body {
 }
 
 .jumbotron {
+    color: white;
     text-align: center, left;
     background-color: hotpink;
-    font-weight: bolder;
-    padding-top: 20px;
+    font-weight: 850;
+    /* padding-top: 20px; */
+    opacity: .75;
+    margin-right: 550px;
 }
 
-.panel-heading {
-    font-weight: bolder;
+.boxes {
+    border: 5px;
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
 }
 
-.panel-body {
-    font-weight: bolder;
+.panel-title {
+    border: 5px;
+    color: white;
+    font-size: 60px;
+    font-weight: 900;
 }
-
-
-
-
 
 /* header {
     border: 5px solid black;
